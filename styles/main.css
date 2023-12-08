@@ -1,0 +1,35 @@
+.park_card {
+    background-color: yellowgreen;
+    display: flex;
+    border: 1px dotted red;
+    flex-direction: column;
+    flex-basis: 10%;
+    margin: 10px;
+    padding: 25px;
+}
+
+
+#areas_main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 60%;
+    width: 400px;
+    
+}
+
+
+.guests {
+    border: 1px dotted red;
+    flex-basis: 30%;
+}
+.servicesList {
+    display: flex;
+}
+
+.main-box {
+    display: flex;
+    width: 1200px;
+}
+.serviceListItem {
+    margin-right: 5px;
+}
