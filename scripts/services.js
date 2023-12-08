@@ -3,11 +3,12 @@
 
 //iterate through parkAreas, for each park look through all areaServices and compare serviceId
 //return park name and servicesNames
-import { getServices, getAreaServices, getParkArea } from "./database.js";
+import { getServices, getAreaServices, getParkArea, getGuests } from "./database.js";
 
 const parkAreas = getParkArea() 
 const areaServices = getAreaServices()
 const services = getServices()
+const guests = getGuests()
 //function to look at each park
 
 export const ParkAreaName = () => {
@@ -19,7 +20,7 @@ export const ParkAreaName = () => {
         const parkServices = findServices(park)
 
         html += "<section class='park_card'>"                       //this line just needs to be "html += ....."
-        html += `<h3>${park.name}</h3>
+        html += `<h3 data-type="name" data-id="${park.id}">${park.name}</h3>
                  <h4>${park.location}</h4>
                  <h5>Services Offered:</h5>
                  <ul>`
@@ -49,6 +50,24 @@ const findServices = (currentPark) => {
     }  
     return servicesArray 
 }
+
+document.addEventListener (
+    "click",
+    (clickEvent) => {
+        const itemClicked = clickEvent.target
+        if (itemClicked.dataset.type === "name") {
+            let guestCount = 0
+            for (const guest of guests) {
+                if (parseInt(itemClicked.dataset.id) === guest.parkAreasId) {
+                    guestCount++
+                }
+            }
+            window.alert(`There are ${guestCount} guests in this area`)
+        }
+    }
+)
+
+
 
 
 
