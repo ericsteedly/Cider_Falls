@@ -6,7 +6,7 @@ const guests = getGuests()
 
 
 export const GuestsList = () => {
-   let guestsHTML = `<ul>`
+   let guestsHTML = `<ul id="guest-list">`
 
     for (const guest of guests ) {
         guestsHTML += `<li data-parkID="${guest.parkAreasId}">${guest.firstNameLastName}</li>`

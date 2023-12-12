@@ -12,7 +12,7 @@ const applicationHTML =
 ${ParkAreaName()}
 </article>
 <aside class="guests">
-<h2>Guest List</h2>
+<h2 id="guest-list-title">Guest List</h2>
 ${GuestsList()}
 </aside>
 </article>
